@@ -9,10 +9,6 @@ import { faGithub, faYoutube, faTwitter } from '@fortawesome/free-brands-svg-ico
 export default function Contact() {
   const form = useRef();
   useEffect(() => {
-    function wait(ms) {
-      return new Promise(res => setTimeout(res, ms));
-    }
-
     const select = (el, all = false) => {
       el = el.trim().replace('/', '');
       if (all) {
@@ -22,48 +18,100 @@ export default function Contact() {
       }
     };
 
-    const show = (el) => {
-      el.style.display = 'block';
-    };
-
-    const hide = (el) => {
-      el.style.display = 'none';
-    };
-
-    const fadeIn = (el, up = false) => {
-      show(el);
-      if (up) {
-        el.style.opacity = "1";
-        el.style.transform = "translateY(0)";
-      } else {
-        el.style.transform = "translateY(0)";
-        el.style.opacity = "1";
-      }
-    };
-
-    const fadeOut = async (el, down = false) => {
-      if (el) {
-        let opacity = Number(window.getComputedStyle(el).getPropertyValue("opacity"));
-        let top = 0;
-        while (opacity > 0 && opacity <= 1) {
-          if (!el) break;
-          await wait(50);
-          opacity -= 0.1;
-          el.style.opacity = opacity.toString();
-          if (down) {
-            await wait(50);
-            el.style.top = top.toString() + 'px';
-            top += 3.3;
-          }
-        }
-        hide(el);
-      }
-    };
-
     select('html').style.background = '#151515';
   }, []);
+  function wait(ms) {
+    return new Promise(res => setTimeout(res, ms));
+  }
+
+  const show = (el) => {
+    el.style.display = 'block';
+  };
+
+  const hide = (el) => {
+    el.style.display = 'none';
+  };
+
+  const fadeIn = (el, up = false) => {
+    show(el);
+    if (up) {
+      el.style.opacity = "1";
+      el.style.transform = "translateY(0)";
+    } else {
+      el.style.transform = "translateY(0)";
+      el.style.opacity = "1";
+    }
+  };
+
+  const fadeOut = async (el, down = false) => {
+    if (el) {
+      let opacity = Number(window.getComputedStyle(el).getPropertyValue("opacity"));
+      let top = 0;
+      while (opacity > 0 && opacity <= 1) {
+        if (!el) break;
+        await wait(50);
+        opacity -= 0.1;
+        el.style.opacity = opacity.toString();
+        if (down) {
+          await wait(50);
+          el.style.top = top.toString() + 'px';
+          top += 3.3;
+        }
+      }
+      hide(el);
+    }
+  };
+
+  const select = (el, all = false) => {
+    el = el.trim().replace('/', '');
+    if (all) {
+      return [...document.querySelectorAll(el)];
+    } else {
+      return document.querySelector(el);
+    }
+  };
+
   const sendEmail = (e) => {
     e.preventDefault();
+    select('.error-label', true).forEach((label) => {
+      label.innerHTML = "";
+    });
+    document.getElementsByName('title').forEach((input) => {
+      if (input.value == null || input.value == "") {
+        select('.error-label', true)[0].innerHTML = "<label class='error' for='#'>제목을 입력해주세요.</label>";
+        return;
+      }
+    });
+    document.getElementsByName('name').forEach((input) => {
+      if (input.value == null || input.value == "") {
+        select('.error-label', true)[1].innerHTML = "<label class='error' for='#'>제목을 입력해주세요.</label>";
+        return;
+      }
+    });
+    document.getElementsByName('email').forEach((input) => {
+      if (input.value == null || input.value == "") {
+        select('.error-label', true)[2].innerHTML = "<label class='error' for='#'>이메일을 입력해주세요.</label>";
+        return;
+      }
+      let regEmail = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/;
+      if (!regEmail.test(input.value)) {
+        select('.error-label', true)[2].innerHTML = "<label class='error' for='#'>올바른 이메일을 입력해주세요.</label>";
+        return;
+      }
+    });
+    document.getElementsByName('message').forEach((input) => {
+      if (input.value == null || input.value == "") {
+        select('.error-label', true)[3].innerHTML = "<label class='error' for='#'>내용을 입력해주세요.</label>";
+        return;
+      }
+    });
+    if (select('#g-recaptcha-response').value == null || select('#g-recaptcha-response').value == "") {
+      select('.error-label', true)[4].innerHTML = "<label class='error' for='#'>reCAPTCHA 인증을 진행해주세요.</label>";
+      return;
+    }
+    select('.error-label', true).forEach((label) => {
+      label.remove();
+    });
     let loader = select('#submit-loader');
     fadeIn(loader);
     emailjs.sendForm('service_kyllox', 'template_kyllox', form.current, 'user_ObDVdiMQlk2RAhavouTNx').then((response) => {
@@ -89,20 +137,24 @@ export default function Contact() {
               <h1>I'd Love To Hear From You.</h1>
               <form ref={form} id="contact-form" name="contact-form" className="contact-form" onSubmit={sendEmail}>
                 <div className="form-field">
-                  <input type="text" name="title" className="form-control" placeholder="Title" required />
+                  <input type="text" name="title" className="form-control" placeholder="Title" />
+                  <div className="error-label"></div>
                 </div>
                 <div className="form-field">
-                  <input type="text" name="name" className="form-control" placeholder="Name" required />
+                  <input type="text" name="name" className="form-control" placeholder="Name" />
+                  <div className="error-label"></div>
                 </div>
                 <div className="form-field">
-                  <input type="text" name="email" className="form-control" placeholder="Email" required />
+                  <input type="text" name="email" className="form-control" placeholder="Email" />
+                  <div className="error-label"></div>
                 </div>
                 <div className="form-field">
-                  <textarea name="message" className="form-control" placeholder="Message" required></textarea>
+                  <textarea name="message" className="form-control" placeholder="Message"></textarea>
+                  <div className="error-label"></div>
                 </div>
                 <div className="form-field">
                   <ReCAPTCHA className="g-recaptcha" sitekey="6LePCCMcAAAAAE0F2XW3lp0H0LuFjRlE-UXlZkcu" />
-                  <div id="error-label"></div>
+                  <div className="error-label"></div>
                 </div>
                 <div className="form-field">
                   <input type="submit" name="submit" className="submit" value="Send" />

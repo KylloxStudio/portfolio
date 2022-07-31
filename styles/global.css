@@ -647,7 +647,7 @@ button.stroke, .button.stroke {
     margin-top: 1.5rem;
 }
 
-#error-label {
+.error-label {
     width: 100%;
 }
 
