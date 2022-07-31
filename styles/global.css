@@ -111,7 +111,7 @@ body::after{
     height:0; 
     overflow:hidden; 
     z-index:-1;
-    content: url('/public/images/intro-background.jpg');
+    content: url('/images/intro-background.jpg');
 }
 
 .loading {
