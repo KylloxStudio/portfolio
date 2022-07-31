@@ -533,6 +533,14 @@ button.stroke, .button.stroke {
 		font-size: 1.35rem;
 	}
 
+    .intro-content h1 {
+        font-size: 3.75rem;
+    }
+    
+    .intro-content h2 {
+        font-size: 1.5rem;
+    }
+
     .intro-content #intro-position span {
         font-size: 0.75rem;
     }
