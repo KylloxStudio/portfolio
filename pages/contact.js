@@ -9,16 +9,7 @@ import { faGithub, faYoutube, faTwitter } from '@fortawesome/free-brands-svg-ico
 export default function Contact() {
   const form = useRef();
   useEffect(() => {
-    const select = (el, all = false) => {
-      el = el.trim().replace('/', '');
-      if (all) {
-        return [...document.querySelectorAll(el)];
-      } else {
-        return document.querySelector(el);
-      }
-    };
-
-    select('html').style.background = '#151515';
+    document.querySelector('html').style.background = '#151515';
   }, []);
   function wait(ms) {
     return new Promise(res => setTimeout(res, ms));
