@@ -1586,7 +1586,6 @@ p.lead {
 	overflow: hidden;
     background-clip: padding-box;
     line-height: 0;
-    background: #000000;
 }
 
 @media (max-width: 768px) {
@@ -1597,6 +1596,7 @@ p.lead {
 
 #projects .projects-item {
 	position: relative;
+    background: #000000;
 }
 
 #projects .projects-item img {
