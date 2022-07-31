@@ -78,35 +78,35 @@ export default function Contact() {
     });
     document.getElementsByName('title').forEach((input) => {
       if (input.value == null || input.value == "") {
-        select('.error-label', true)[0].innerHTML = "<label class='error' for='#'>제목을 입력해주세요.</label>";
+        select('.error-label', true)[0].innerHTML = "<label class='error' for='#'>Please Enter a Title.</label>";
         return;
       }
     });
     document.getElementsByName('name').forEach((input) => {
       if (input.value == null || input.value == "") {
-        select('.error-label', true)[1].innerHTML = "<label class='error' for='#'>제목을 입력해주세요.</label>";
+        select('.error-label', true)[1].innerHTML = "<label class='error' for='#'>Please Enter Your Name.</label>";
         return;
       }
     });
     document.getElementsByName('email').forEach((input) => {
       if (input.value == null || input.value == "") {
-        select('.error-label', true)[2].innerHTML = "<label class='error' for='#'>이메일을 입력해주세요.</label>";
+        select('.error-label', true)[2].innerHTML = "<label class='error' for='#'>Please Enter Your Email.</label>";
         return;
       }
       let regEmail = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/;
       if (!regEmail.test(input.value)) {
-        select('.error-label', true)[2].innerHTML = "<label class='error' for='#'>올바른 이메일을 입력해주세요.</label>";
+        select('.error-label', true)[2].innerHTML = "<label class='error' for='#'>Please Enter a Valid Email.</label>";
         return;
       }
     });
     document.getElementsByName('message').forEach((input) => {
       if (input.value == null || input.value == "") {
-        select('.error-label', true)[3].innerHTML = "<label class='error' for='#'>내용을 입력해주세요.</label>";
+        select('.error-label', true)[3].innerHTML = "<label class='error' for='#'>Please Enter the Messages.</label>";
         return;
       }
     });
     if (select('#g-recaptcha-response').value == null || select('#g-recaptcha-response').value == "") {
-      select('.error-label', true)[4].innerHTML = "<label class='error' for='#'>reCAPTCHA 인증을 진행해주세요.</label>";
+      select('.error-label', true)[4].innerHTML = "<label class='error' for='#'>Please Proceed With reCAPTCHA Certification.</label>";
       return;
     }
     select('.error-label', true).forEach((label) => {
@@ -118,12 +118,12 @@ export default function Contact() {
       fadeOut(loader);
       hide(select('#message-warning'));
       fadeOut(select('#contact-form'));
-      select('#message-success').innerHTML = "<i className='fa fa-check'></i>이메일을 성공적으로 전송했습니다. 작성해주신 이메일 주소로 답변이 전송됩니다.</p><br>" + "<p>" + response.status + "</p>" + " " + response.text;
+      select('#message-success').innerHTML = "<i className='fa fa-check'></i>The message was sent successfully. The answer will be sent to the email address you filled out.</p><br>" + "<p>" + response.status + "</p>" + " " + response.text;
       fadeIn(select('#message-success'));
       hide(select('#message-warning'));
     }, function (e) {
       fadeOut(loader);
-      select('#message-warning').innerHTML = "<i className='fa fa-xmark'></i>이메일 전송에 실패하였습니다. 잠시 후 다시 시도해주세요.<br>" + "<p>" + e.status + "</p>" + " " + e.text;
+      select('#message-warning').innerHTML = "<i className='fa fa-xmark'></i>Failed to send message. Please try again in a few minutes.<br>" + "<p>" + e.status + "</p>" + " " + e.text;
       fadeIn(select('#message-warning'));
     });
   };

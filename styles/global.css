@@ -638,7 +638,7 @@ button.stroke, .button.stroke {
 }
 
 .form-field label.error {
-    font-family: "InfinitySans Bold";
+    font-family: "Poppins Medium";
     font-size: 1rem;
     color: #ff1b1b;
 }
