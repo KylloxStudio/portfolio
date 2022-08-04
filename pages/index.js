@@ -447,8 +447,7 @@ export default function Index() {
       <div id="durango-studio">
         <Modal>
           <div className="media">
-            <Img src="/images/durango-main.png" width={2160} height={1130} onLoadingComplete={() => document.querySelector('.loading').remove()} alt="DurangoStudio" />
-            <div className="loading" />
+            <Img src="/images/durango-main.png" width={2160} height={1130} alt="DurangoStudio" />
           </div>
           <div className="description-box">
             <h4>Durango Studio</h4>
@@ -464,8 +463,7 @@ export default function Index() {
       <div id="durango-v2">
         <Modal>
           <div className="media">
-            <Img src="/images/durango-project.jpg" width={1439} height={750} onLoadingComplete={() => document.querySelector('.loading').remove()} alt="DurangoV2" />
-            <div className="loading" />
+            <Img src="/images/durango-project.jpg" width={1439} height={750} alt="DurangoV2" />
           </div>
           <div className="description-box">
             <h4>Durango_V2</h4>
@@ -481,8 +479,7 @@ export default function Index() {
       <div id="what-studio">
         <Modal>
           <div className="media">
-            <Img src="/images/what-studio.png" width={1440} height={960} onLoadingComplete={() => document.querySelector('.loading').remove()} alt="WhatStudio" />
-            <div className="loading" />
+            <Img src="/images/what-studio.png" width={1440} height={960} alt="WhatStudio" />
           </div>
           <div className="description-box">
             <h4>What! Studio</h4>
