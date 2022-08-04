@@ -369,7 +369,7 @@ export default function Index() {
           <div className="col-twelve">
             <Masonry breakpointCols={2} className="projects-wrapper" columnClassName="projects-item-wrap">
               <div className="projects-item">
-                <Img src="/images/durango-studio.jpg" width={1440} height={755} onLoadingComplete={() => document.querySelector('.loading').remove()} alt="DurangoStudio" />
+                <Img src="/images/durango-studio.jpg" width={1440} height={755} onLoadingComplete={() => { while(document.querySelector('.loading')) document.querySelector('.loading').remove()}} alt="DurangoStudio" />
                 <div className="loading" />
                 <a href="#durango-studio" className="overlay">
                   <div className="projects-item-table">
@@ -381,7 +381,7 @@ export default function Index() {
                 </a>
               </div>
               <div className="projects-item">
-                <Img src="/images/durango-airballoon.png" width={1440} height={837} onLoadingComplete={() => document.querySelector('.loading').remove()} alt="DurangoAirballoon" />
+                <Img src="/images/durango-airballoon.png" width={1440} height={837} onLoadingComplete={() => { while(document.querySelector('.loading')) document.querySelector('.loading').remove()}} alt="DurangoAirballoon" />
                 <div className="loading" />
                 <a href="#durango-v2" className="overlay">
                   <div className="projects-item-table">
@@ -393,7 +393,7 @@ export default function Index() {
                 </a>
               </div>
               <div className="projects-item">
-                <Img src="/images/durango-pet.png" width={1440} height={755} onLoadingComplete={() => document.querySelector('.loading').remove()} alt="DurangoPet" />
+                <Img src="/images/durango-pet.png" width={1440} height={755} onLoadingComplete={() => { while(document.querySelector('.loading')) document.querySelector('.loading').remove()}} alt="DurangoPet" />
                 <div className="loading" />
                 <a href="#durango-v2" className="overlay">
                   <div className="projects-item-table">
@@ -405,7 +405,7 @@ export default function Index() {
                 </a>
               </div>
               <div className="projects-item">
-                <Img src="/images/durango-combat.png" width={1440} height={838} onLoadingComplete={() => document.querySelector('.loading').remove()} alt="DurangoCombat" />
+                <Img src="/images/durango-combat.png" width={1440} height={838} onLoadingComplete={() => { while(document.querySelector('.loading')) document.querySelector('.loading').remove()}} alt="DurangoCombat" />
                 <div className="loading" />
                 <a href="#durango-v2" className="overlay">
                   <div className="projects-item-table">
@@ -417,7 +417,7 @@ export default function Index() {
                 </a>
               </div>
               <div className="projects-item">
-                <Img src="/images/what-studio.png" width={1440} height={960} onLoadingComplete={() => document.querySelector('.loading').remove()} alt="WhatStudio" />
+                <Img src="/images/what-studio.png" width={1440} height={960} onLoadingComplete={() => { while(document.querySelector('.loading')) document.querySelector('.loading').remove()}} alt="WhatStudio" />
                 <div className="loading" />
                 <a href="#what-studio" className="overlay">
                   <div className="projects-item-table">
@@ -429,7 +429,7 @@ export default function Index() {
                 </a>
               </div>
               <div className="projects-item">
-                <Img src="/images/durango-sailing.jpg" width={1440} height={838} onLoadingComplete={() => document.querySelector('.loading').remove()} alt="DurangoSailing" />
+                <Img src="/images/durango-sailing.jpg" width={1440} height={838} onLoadingComplete={() => { while(document.querySelector('.loading')) document.querySelector('.loading').remove()}} alt="DurangoSailing" />
                 <div className="loading" />
                 <a href="#durango-v2" className="overlay">
                   <div className="projects-item-table">
@@ -447,7 +447,8 @@ export default function Index() {
       <div id="durango-studio">
         <Modal>
           <div className="media">
-            <Img src="/images/durango-main.png" width={2160} height={1130} alt="DurangoStudio" />
+            <Img src="/images/durango-main.png" width={2160} height={1130} onLoadingComplete={() => { while(document.querySelector('.loading')) document.querySelector('.loading').remove()}} alt="DurangoStudio" />
+            <div className="loading" />
           </div>
           <div className="description-box">
             <h4>Durango Studio</h4>
@@ -463,7 +464,8 @@ export default function Index() {
       <div id="durango-v2">
         <Modal>
           <div className="media">
-            <Img src="/images/durango-project.jpg" width={1439} height={750} alt="DurangoV2" />
+            <Img src="/images/durango-project.jpg" width={1439} height={750} onLoadingComplete={() => { while(document.querySelector('.loading')) document.querySelector('.loading').remove()}} alt="DurangoV2" />
+            <div className="loading" />
           </div>
           <div className="description-box">
             <h4>Durango_V2</h4>
@@ -479,7 +481,8 @@ export default function Index() {
       <div id="what-studio">
         <Modal>
           <div className="media">
-            <Img src="/images/what-studio.png" width={1440} height={960} alt="WhatStudio" />
+            <Img src="/images/what-studio.png" width={1440} height={960} onLoadingComplete={() => { while(document.querySelector('.loading')) document.querySelector('.loading').remove()}} alt="WhatStudio" />
+            <div className="loading" />
           </div>
           <div className="description-box">
             <h4>What! Studio</h4>
