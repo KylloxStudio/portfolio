@@ -2,9 +2,6 @@
 
 @import url("./framework.css");
 
-/* Copyright [Google Fonts - Google] [https://fonts.google.com] */
-@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
-
 /* Copyright [NanumSquare - Naver] [https://hangeul.naver.com/font] */
 @font-face {
     font-family: 'NanumSquare';
@@ -12,13 +9,6 @@
 }
 
 /* Copyright [Infinity Sans - Wemade] [https://wemade.com/Company/Ci] */
-@font-face {
-    font-family: 'InfinitySans Regular';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/InfinitySans-RegularA1.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
 @font-face {
     font-family: 'InfinitySans Bold';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/InfinitySans-BoldA1.woff') format('woff');
@@ -121,23 +111,20 @@ body::after{
     left: 50%;
     top: 50%;
     transform-origin: 50%;
- 
     margin-left: -21px;
     margin-top: -21px;
     border-radius: 50%;
- 
     border: 4px solid darkgray;
     border-top-color: transparent;
     border-left-color: transparent;
- 
     animation: Rotate 0.8s infinite linear;
     z-index: 100;
- }
+}
   
  @keyframes Rotate {
-   from {transform: rotate(0deg)}
-   to {transform: rotate(360deg)}
- }
+   from { transform: rotate(0deg); }
+   to { transform: rotate(360deg); }
+}
 
 
 /* Rows
@@ -152,15 +139,6 @@ body::after{
 @media (max-width: 768px) {
 	.row {
 		width: auto;
-		padding-left: 30px;
-		padding-right: 30px;
-	}
-
-	.row .row {
-		padding-left: 0;
-		padding-right: 0;
-		margin-left: -15px;
-		margin-right: -15px;
 	}
 
     .tab-full {
@@ -367,7 +345,7 @@ body::after{
 	color: #ffffff;
 	font-family: "Raleway Light", sans-serif;
 	font-size: 3.75rem;
-	line-height: 1.05;
+	line-height: 1.2;
     letter-spacing: 1px;
 	margin: 0 auto;
 	text-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
@@ -530,19 +508,19 @@ button.stroke, .button.stroke {
 
 @media (max-width: 578px) {
     .intro-content h5 {
-		font-size: 1.35rem;
+		font-size: 1.25rem;
 	}
 
     .intro-content h1 {
-        font-size: 3.75rem;
+        font-size: 3.25rem;
     }
     
     .intro-content h2 {
-        font-size: 1.5rem;
+        font-size: 2.25rem;
     }
 
     .intro-content #intro-position span {
-        font-size: 0.75rem;
+        font-size: 0.5rem;
     }
 
     .intro-content #intro-position span::after {
@@ -565,10 +543,6 @@ button.stroke, .button.stroke {
         font-size: 1.65rem;
     }
 }
-
-
-/* Footer
---------------------------------------------------------------------------------------------------------------- */
 
 .contact-content h5 {
 	font-family: "Poppins Bold", sans-serif;
@@ -1367,17 +1341,6 @@ p.lead {
     }
 }
 
-.using-tool {
-    border-bottom: 3px solid #70b7f3;
-    padding-bottom: 0.5rem;
-}
-
-.using-tool-icon {
-    display: inline-block;
-    width: 25px;
-    height: 25px;
-}
-
 .skills {
     padding-top: 1.5rem;
 }
@@ -1395,7 +1358,6 @@ p.lead {
 .about-content .info-list li strong {
 	font-family: "Poppins Bold", sans-serif;
 	color: #313131;
-	text-transform: uppercase;
 	letter-spacing: 0.1rem;
 	font-size: 1.05rem;
 	line-height: 3rem;
@@ -1728,6 +1690,7 @@ p.lead {
 }
 
 .hidden-scroll {
+    position: fixed;
     height: 100%;
     min-height: 100%;
     overflow: hidden;
@@ -1738,4 +1701,135 @@ p.lead {
     transition: opacity 2000ms, transform 2000ms;
     transform: translateY(20px);
     opacity: 0;
+}
+
+.modal-overlay {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: none;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(1.5px);
+    z-index: 1024;
+    transition: all 0.5s ease-in-out;
+    opacity: 0;
+}
+
+.modal-container {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    box-sizing: border-box;
+    opacity: 0;
+    transform: translateY(-100%);
+    transition: all 0.5s ease-in-out;
+    z-index: 1025;
+}
+
+.modal-container:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.popup {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    overflow-y: auto;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal {
+    display: inline-block;
+	max-width: 550px;
+	position: relative;
+    background: #ffffff;
+}
+
+.modal .media {
+	position: relative;
+    padding: 0;
+    margin: 0;
+    line-height: 0;
+}
+
+.modal img {
+	vertical-align: bottom;
+}
+
+.modal .description-box {
+    padding: 1.5rem 2.5rem;
+}
+
+.modal .description-box h4 {
+	font-family: "Poppins Bold", sans-serif;
+	font-size: 1.2rem;
+    color: #313131;
+	line-height: 1.25rem;
+	margin-bottom: 0.85rem;
+}
+
+.modal .description-box p {
+	font-family: "Poppins Medium", sans-serif;
+    font-size: 1rem;
+    color: #a1a1a1;
+    letter-spacing: 1px;
+    line-height: 1.25rem;
+    margin-bottom: 12px;
+}
+
+.modal .categories {
+	font-family: "Poppins Bold", sans-serif;
+	font-size: 0.9rem;
+	line-height: 1.6rem;
+	text-transform: uppercase;
+	letter-spacing: 0.05rem;
+	display: block;
+	text-align: left;
+	color: rgba(0, 0, 0, 0.5);
+}
+
+.modal .link-box {
+	width: 100%;
+	overflow: hidden;
+	background: #151515;
+}
+
+.modal .link-box a {
+	font-family: "Poppins Bold", sans-serif;
+    font-size: 0.95rem;
+    line-height: 3.75rem;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    display: block;
+    text-align: center;
+    float: left;
+    width: 50%;
+    transition: all 0.3s ease-in-out;
+}
+
+.modal .link-box a:first-child {
+	border-right: 2px solid rgba(200, 200, 200, 0.1);
+}
+
+.modal .link-box a:hover {
+	background: #70b7f3;
+}
+
+@media (max-width: 578px) {
+	.modal {
+		width: auto;
+		margin: 0 20px;
+	}
 }

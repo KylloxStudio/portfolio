@@ -157,7 +157,7 @@ export default function Navigation() {
       pagescroll.addEventListener('click', (event) => {
         event.preventDefault();
         let attr = pagescroll.getAttribute('href').replace('/', '');
-        if (router.route == '/contact' && pagescroll.innerText != 'Contact') {
+        if (router.route != '/' && pagescroll.innerText != 'Contact') {
           movePageScroll.move = true;
           movePageScroll.to = attr;
           router.push('/');

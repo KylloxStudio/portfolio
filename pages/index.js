@@ -3,13 +3,14 @@ import Link from 'next/link';
 import Img from "next/image";
 import Layout from '../components/layout';
 import Masonry from 'react-masonry-css';
+import Modal from '../components/modal';
 import { useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAnglesDown } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faYoutube, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { movePageScroll } from '../components/navigation';
 
-export default function Intro() {
+export default function Index() {
   useEffect(() => {
     function wait(ms) {
       return new Promise(res => setTimeout(res, ms));
@@ -24,12 +25,55 @@ export default function Intro() {
       }
     };
 
+    const page = document.querySelector('html');
+    const disableScroll = () => {
+      page.style.overflow = 'hidden';
+    };
+    const enableScroll = () => {
+      page.style.removeProperty('overflow');
+    };
+
+    let overlay;
+    let modal;
+    let projectlinks = select('.projects-item a', true);
+    projectlinks.forEach((projectlink) => {
+      if (!projectlink.hash) return;
+      projectlink.addEventListener('click', async (event) => {
+        event.preventDefault();
+        overlay = select(projectlink.hash + " .modal-overlay");
+        overlay.style.display = 'block';
+        overlay.style.height = document.body.scrollHeight.toString() + 'px';
+        overlay.style.opacity = '1';
+        modal = select(projectlink.hash + " .modal-container");
+        modal.style.top = window.scrollY.toFixed(1).toString() + 'px';
+        await wait(300);
+        modal.style.opacity = '1';
+        modal.style.transform = "translateY(0)";
+        disableScroll();
+      });
+    });
+
+    let closeModalLinks = select('.modal-dismiss', true);
+    closeModalLinks.forEach((closeModalLink) => {
+      closeModalLink.addEventListener('click', async (event) => {
+        event.preventDefault();
+        overlay.style.opacity = '0';
+        modal.style.opacity = '0';
+        modal.style.transform = "translateY(-100%)";
+        await wait(300);
+        overlay.style.display = 'none';
+        modal.style.top = '0';
+        enableScroll();
+      });
+    });
+
     const intro = async () => {
       let content = "";
       let text = "";
       let index = 0;
       if (select(".intro-content h2")) {
-        content = "Anything is possible if you have got enough nerve.";
+        if (window.innerWidth > 340) content = "Anything is possible\nif you have got enough nerve.";
+        else content = "Anything is possible if you have got enough nerve.";
         text = select(".intro-content h2");
         index = 0;
       }
@@ -37,11 +81,11 @@ export default function Intro() {
         if (!select(".intro-content h2")) break;
         await wait(100);
         let txt = content.charAt(index);
-        text.innerHTML += txt;
+        text.innerHTML += txt === "\n" ? "<br/>" : txt;
         index++;
       }
       if (select('#intro-description')) {
-        await wait(1250);
+        await wait(1500);
         if (select('#intro-description'))
           fadeOut(select('#intro-description'), true);
       }
@@ -272,7 +316,7 @@ export default function Intro() {
                 <span>Student, Developer</span>
               </li>
               <li>
-                <strong>WebSite:</strong>
+                <strong>Portfolio:</strong>
                 <span>kyllox.studio</span>
               </li>
               <li>
@@ -327,7 +371,7 @@ export default function Intro() {
               <div className="projects-item">
                 <Img src="/images/durango-studio.jpg" width={1440} height={755} onLoadingComplete={() => document.querySelector('.loading').remove()} alt="DurangoStudio" />
                 <div className="loading" />
-                <a href="https://durango.kyllox.studio" target="_blank" className="overlay">
+                <a href="#durango-studio" className="overlay">
                   <div className="projects-item-table">
                     <div className="projects-item-cell">
                       <h3 className="projects-title">Durango Studio</h3>
@@ -339,7 +383,7 @@ export default function Intro() {
               <div className="projects-item">
                 <Img src="/images/durango-airballoon.png" width={1440} height={837} onLoadingComplete={() => document.querySelector('.loading').remove()} alt="DurangoAirballoon" />
                 <div className="loading" />
-                <a href="https://github.com/KylloxStudio/Durango_V2" target="_blank" className="overlay">
+                <a href="#durango-v2" className="overlay">
                   <div className="projects-item-table">
                     <div className="projects-item-cell">
                       <h3 className="projects-title">DurangoV2</h3>
@@ -351,7 +395,7 @@ export default function Intro() {
               <div className="projects-item">
                 <Img src="/images/durango-pet.png" width={1440} height={755} onLoadingComplete={() => document.querySelector('.loading').remove()} alt="DurangoPet" />
                 <div className="loading" />
-                <a href="https://github.com/KylloxStudio/Durango_V2" target="_blank" className="overlay">
+                <a href="#durango-v2" className="overlay">
                   <div className="projects-item-table">
                     <div className="projects-item-cell">
                       <h3 className="projects-title">Durango_V2</h3>
@@ -363,7 +407,7 @@ export default function Intro() {
               <div className="projects-item">
                 <Img src="/images/durango-combat.png" width={1440} height={838} onLoadingComplete={() => document.querySelector('.loading').remove()} alt="DurangoCombat" />
                 <div className="loading" />
-                <a href="https://github.com/KylloxStudio/Durango_V2" target="_blank" className="overlay">
+                <a href="#durango-v2" className="overlay">
                   <div className="projects-item-table">
                     <div className="projects-item-cell">
                       <h3 className="projects-title">Durango_V2</h3>
@@ -375,7 +419,7 @@ export default function Intro() {
               <div className="projects-item">
                 <Img src="/images/what-studio.png" width={1440} height={960} onLoadingComplete={() => document.querySelector('.loading').remove()} alt="WhatStudio" />
                 <div className="loading" />
-                <a href="https://what.kyllox.studio" target="_blank" className="overlay">
+                <a href="#what-studio" className="overlay">
                   <div className="projects-item-table">
                     <div className="projects-item-cell">
                       <h3 className="projects-title">What Studio</h3>
@@ -387,7 +431,7 @@ export default function Intro() {
               <div className="projects-item">
                 <Img src="/images/durango-sailing.jpg" width={1440} height={838} onLoadingComplete={() => document.querySelector('.loading').remove()} alt="DurangoSailing" />
                 <div className="loading" />
-                <a href="https://github.com/KylloxStudio/Durango_V2" target="_blank" className="overlay">
+                <a href="#durango-v2" className="overlay">
                   <div className="projects-item-table">
                     <div className="projects-item-cell">
                       <h3 className="projects-title">Durango_V2</h3>
@@ -400,6 +444,54 @@ export default function Intro() {
           </div>
         </div>
       </section>
+      <div id="durango-studio">
+        <Modal>
+          <div className="media">
+            <Img src="/images/durango-main.png" width={2160} height={1130} alt="" />
+          </div>
+          <div className="description-box">
+            <h4>Durango Studio</h4>
+            <p>Kyllox's Durango Studio. I upload the news of Durango development this website.</p>
+            <div className="categories">Web Development</div>
+          </div>
+          <div className="link-box">
+            <a href="https://durango.kyllox.studio" target="_blank" className="modal-visit">Visit WebSite</a>
+            <a className="modal-dismiss">Close</a>
+          </div>
+        </Modal>
+      </div>
+      <div id="durango-v2">
+        <Modal>
+          <div className="media">
+            <Img src="/images/durango-project.jpg" width={1439} height={750} alt="" />
+          </div>
+          <div className="description-box">
+            <h4>Durango_V2</h4>
+            <p>This is Kyllox's New Durango. I'm developing Durango as a solo play game.</p>
+            <div className="categories">Game Development</div>
+          </div>
+          <div className="link-box">
+            <a href="https://github.com/KylloxStudio/Durango_V2" target="_blank" className="modal-visit">Visit WebSite</a>
+            <a className="modal-dismiss">Close</a>
+          </div>
+        </Modal>
+      </div>
+      <div id="what-studio">
+        <Modal>
+          <div className="media">
+            <Img src="/images/what-studio.png" width={1440} height={960} alt="" />
+          </div>
+          <div className="description-box">
+            <h4>What! Studio</h4>
+            <p>This is a website that restored the website of What Studio, which is now disbanded. You can see the NDC of What Studio here.</p>
+            <div className="categories">Web Development</div>
+          </div>
+          <div className="link-box">
+            <a href="https://what.kyllox.studio" target="_blank" className="modal-visit">Visit WebSite</a>
+            <a className="modal-dismiss">Close</a>
+          </div>
+        </Modal>
+      </div>
     </Layout>
   );
 }

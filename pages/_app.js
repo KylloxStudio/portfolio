@@ -2,7 +2,7 @@ import Head from 'next/head'
 import { config } from '@fortawesome/fontawesome-svg-core'
 import '@fortawesome/fontawesome-svg-core/styles.css'
 config.autoAddCss = false
-import '../styles/global.css'
+import '../styles/globals.css'
 const { AnimatePresence } = require("framer-motion");
 import { useRouter } from 'next/dist/client/router';
 
