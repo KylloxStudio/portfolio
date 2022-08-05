@@ -67,14 +67,20 @@ export default function Index() {
       });
     });
 
-    select('.modal').addEventListener('click', (e) => {
-      e.preventDefault();
-      e.stopPropagation();
+    let modals = select('.modal', true);
+    modals.forEach((modal) => {
+      modal.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+      });
     });
 
-    select('.modal-visit').addEventListener('click', () => {
-      var win = window.open(select('.modal-visit').href, '_blank');
-      win.focus();
+    let projectVisitLinks = select('.modal-visit', true);
+    projectVisitLinks.forEach((projectVisitLink) => {
+      projectVisitLink.addEventListener('click', () => {
+        var win = window.open(projectVisitLink.href, '_blank');
+        win.focus();
+      });
     });
 
     const intro = async () => {
