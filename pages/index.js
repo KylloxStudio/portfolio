@@ -67,6 +67,16 @@ export default function Index() {
       });
     });
 
+    select('.modal').addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+    });
+
+    select('.modal-visit').addEventListener('click', () => {
+      var win = window.open(select('.modal-visit').href, '_blank');
+      win.focus();
+    });
+
     const intro = async () => {
       let content = "";
       let text = "";
