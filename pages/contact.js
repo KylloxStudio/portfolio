@@ -23,32 +23,17 @@ export default function Contact() {
     el.style.display = 'none';
   };
 
-  const fadeIn = (el, up = false) => {
+  const fadeIn = (el) => {
     show(el);
-    if (up) {
-      el.style.opacity = "1";
-      el.style.transform = "translateY(0)";
-    } else {
-      el.style.transform = "translateY(0)";
+    if (el) {
       el.style.opacity = "1";
     }
   };
 
-  const fadeOut = async (el, down = false) => {
+  const fadeOut = async (el) => {
     if (el) {
-      let opacity = Number(window.getComputedStyle(el).getPropertyValue("opacity"));
-      let top = 0;
-      while (opacity > 0 && opacity <= 1) {
-        if (!el) break;
-        await wait(50);
-        opacity -= 0.1;
-        el.style.opacity = opacity.toString();
-        if (down) {
-          await wait(50);
-          el.style.top = top.toString() + 'px';
-          top += 3.3;
-        }
-      }
+      el.style.opacity = "0";
+      await wait(2000);
       hide(el);
     }
   };

@@ -101,12 +101,12 @@ export default function Index() {
         index++;
       }
       if (select('#intro-description')) {
-        await wait(1500);
+        await wait(1600);
         if (select('#intro-description'))
           fadeOut(select('#intro-description'), true);
       }
       if (select("#intro") && select('#intro-overlay')) {
-        await wait(2000);
+        await wait(2500);
         if (select("#intro") && select('#intro-overlay')) {
           select("#intro-overlay").style.removeProperty('background');
           select("#intro").style.removeProperty('background');
@@ -238,19 +238,13 @@ export default function Index() {
 
     const fadeOut = async (el, down) => {
       if (el) {
-        let opacity = Number(window.getComputedStyle(el).getPropertyValue("opacity"));
-        let top = 0;
-        while (opacity > 0 && opacity <= 1) {
-          if (!el) break;
-          await wait(50);
-          opacity -= 0.1;
-          el.style.opacity = opacity.toString();
-          if (down) {
-            await wait(50);
-            el.style.top = top.toString() + 'px';
-            top += 3.3;
-          }
+        if (down) {
+          el.style.opacity = "0";
+          el.style.transform = "translateY(25px)";
+        } else {
+          el.style.opacity = "0";
         }
+        await wait(2000);
         hide(el);
       }
     };
@@ -277,7 +271,7 @@ export default function Index() {
         <div id="intro-overlay" style={{ background: '#000000' }}></div>
         <div className="intro-content">
           <div className="row">
-            <h2 id="intro-description"></h2>
+            <h2 id="intro-description" className="fade-out"></h2>
             <h5></h5><span id="hw-cursor" style={{ opacity: '0' }}></span>
             <div id="intro-title" style={{ display: 'none' }} className='fade-in'>
               <h1>I am Kyllox.</h1>

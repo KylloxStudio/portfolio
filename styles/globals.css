@@ -89,7 +89,6 @@ html, body {
 	height: 100%;
 }
 
-
 body {
     transition-duration: .1s;
     transition-timing-function: linear;
@@ -1701,6 +1700,11 @@ p.lead {
     transition: opacity 2000ms, transform 2000ms;
     transform: translateY(20px);
     opacity: 0;
+}
+
+.fade-out {
+    transition: opacity 1800ms, transform 2000ms !important;
+    transform: translateY(0);
 }
 
 .modal-overlay {
