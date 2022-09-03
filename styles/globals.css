@@ -518,6 +518,10 @@ button.stroke, .button.stroke {
         font-size: 2.25rem;
     }
 
+    .intro-content #intro-position {
+        line-height: 1.75rem;
+    }
+
     .intro-content #intro-position span {
         font-size: 0.5rem;
     }
