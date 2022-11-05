@@ -59,7 +59,7 @@ export default function Index() {
         event.preventDefault();
         overlay.style.opacity = '0';
         modal.style.opacity = '0';
-        modal.style.transform = "translateY(-80%)";
+        modal.style.transform = "translateY(-100%)";
         await wait(300);
         overlay.style.display = 'none';
         modal.style.top = '0';

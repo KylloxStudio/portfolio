@@ -167,6 +167,7 @@ export default function Contact() {
         <footer id="copyright">
           <div className="row">
             <div className="col-six tab-full">
+              <a className="hit-count" href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fkyllox.tech&count_bg=%233793D5&title_bg=%23171717&icon=powershell.svg&icon_color=%23F1F1F1&title=Hits&edge_flat=true"/></a>
               <p className="fl_left text">Kyllox &copy; 2021. All Rights Reserved.</p>
             </div>
             <div className="col-six tab-full pull-right social">

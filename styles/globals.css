@@ -806,10 +806,15 @@ button.stroke, .button.stroke {
 }
 
 #copyright .text {
-    color: #a1a1a1;
-    margin: 2.75rem 0 0 0;
+    color: #afafaf;
+    margin: 1.75rem 0 0 0;
     padding: 0;
     font-size: 14px;
+}
+
+#copyright .hit-count {
+    position: relative;
+    top: 5px;
 }
 
 footer .row {
@@ -1732,7 +1737,7 @@ p.lead {
     top: 0;
     box-sizing: border-box;
     opacity: 0;
-    transform: translateY(-80%);
+    transform: translateY(-100%);
     transition: all 0.5s ease-in-out;
     z-index: 1025;
 }
