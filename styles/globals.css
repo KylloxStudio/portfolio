@@ -1847,3 +1847,43 @@ p.lead {
 		margin: 0 20px;
 	}
 }
+
+.page-not-found {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #ffffff;
+}
+
+.page-not-found .container {
+    width: 50%;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 18px;
+    font-family: 'Raleway';
+}
+
+.page-not-found .error-code {
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #000;
+}
+
+.page-not-found .error-text {
+    margin-bottom: 12px;
+    font-size: 15px;
+    color: #000;
+}
+
+.page-not-found .back-link {
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: underline;
+    color: #4099ff;
+}
+
+.page-not-found .back-link:hover {
+    text-decoration: none;
+}
