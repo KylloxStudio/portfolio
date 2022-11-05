@@ -318,9 +318,9 @@ export default function Navigation() {
             <li><Link href="/contact" passHref><a className="nav-link page-link">Contact</a></Link></li>
             <li><a className="nav-link drop"><FontAwesomeIcon icon={faSortDown} />Pages</a>
               <ul className="drop-menu">
-                <li><a href="https://blog.kyllox.studio">Blog</a></li>
-                <li><a href="https://durango.kyllox.studio">Durango Studio</a></li>
-                <li><a href="https://what.kyllox.studio">What! Studio</a></li>
+                <li><a href="https://blog.kyllox.tech">Blog</a></li>
+                <li><a href="https://durango.kyllox.tech">Durango Studio</a></li>
+                <li><a href="https://what.kyllox.tech">What! Studio</a></li>
               </ul>
             </li>
           </ul>
@@ -361,9 +361,9 @@ export default function Navigation() {
                 <a id="slide-pages-btn" className="slide-link">Pages</a>
               </div>
               <ul id="slide-menu-pages" className="slide-menu-sub">
-                <li className="slide-item-sub"><a className="slide-link-sub" href="https://blog.kyllox.studio">└ Blog</a></li>
-                <li className="slide-item-sub"><a className="slide-link-sub" href="https://durango.kyllox.studio">└ Durango Studio</a></li>
-                <li className="slide-item-sub"><a className="slide-link-sub" href="https://what.kyllox.studio">└ What! Studio</a></li>
+                <li className="slide-item-sub"><a className="slide-link-sub" href="https://blog.kyllox.tech">└ Blog</a></li>
+                <li className="slide-item-sub"><a className="slide-link-sub" href="https://durango.kyllox.tech">└ Durango Studio</a></li>
+                <li className="slide-item-sub"><a className="slide-link-sub" href="https://what.kyllox.tech">└ What! Studio</a></li>
               </ul>
             </li>
           </ul>

@@ -1732,7 +1732,7 @@ p.lead {
     top: 0;
     box-sizing: border-box;
     opacity: 0;
-    transform: translateY(-100%);
+    transform: translateY(-80%);
     transition: all 0.5s ease-in-out;
     z-index: 1025;
 }

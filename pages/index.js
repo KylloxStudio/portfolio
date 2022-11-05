@@ -59,7 +59,7 @@ export default function Index() {
         event.preventDefault();
         overlay.style.opacity = '0';
         modal.style.opacity = '0';
-        modal.style.transform = "translateY(-100%)";
+        modal.style.transform = "translateY(-80%)";
         await wait(300);
         overlay.style.display = 'none';
         modal.style.top = '0';
@@ -327,7 +327,7 @@ export default function Index() {
               </li>
               <li>
                 <strong>Portfolio:</strong>
-                <span>kyllox.studio</span>
+                <span>kyllox.tech</span>
               </li>
               <li>
                 <strong>Email:</strong>
@@ -466,7 +466,7 @@ export default function Index() {
             <div className="categories">Web Development</div>
           </div>
           <div className="link-box">
-            <a href="https://durango.kyllox.studio" target="_blank" className="modal-visit">Visit WebSite</a>
+            <a href="https://durango.kyllox.tech" target="_blank" className="modal-visit">Visit WebSite</a>
             <a className="modal-dismiss">Close</a>
           </div>
         </Modal>
@@ -500,7 +500,7 @@ export default function Index() {
             <div className="categories">Web Development</div>
           </div>
           <div className="link-box">
-            <a href="https://what.kyllox.studio" target="_blank" className="modal-visit">Visit WebSite</a>
+            <a href="https://what.kyllox.tech" target="_blank" className="modal-visit">Visit WebSite</a>
             <a className="modal-dismiss">Close</a>
           </div>
         </Modal>
