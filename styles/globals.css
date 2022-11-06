@@ -896,6 +896,11 @@ footer #donate span {
 @media (max-width: 768px) {
     #copyright .text {
         margin: 0;
+        margin-top: 5px;
+    }
+
+    #copyright .hit-count {
+        top: 0;
     }
 
 	footer {
