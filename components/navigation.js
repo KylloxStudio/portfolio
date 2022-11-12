@@ -190,7 +190,7 @@ export default function Navigation() {
         if (router.route != '/') {
           event.preventDefault();
           let attr = '#' + pagelink.innerText.toLowerCase();
-          scrollToY(select(attr).offsetTop, 1000, 'easeInOutQuint');
+          scrollToY(select(attr).offsetTop, 350, 'easeInOutQuint');
         }
       });
     });
@@ -206,7 +206,7 @@ export default function Navigation() {
           router.push('/');
           return;
         }
-        scrollToY(select(attr).offsetTop, 1000, 'easeInOutQuint');
+        scrollToY(select(attr).offsetTop, 350, 'easeInOutQuint');
       });
     });
 
