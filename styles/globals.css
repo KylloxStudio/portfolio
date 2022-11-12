@@ -966,6 +966,14 @@ nav ol {
     text-transform: none;
 }
 
+@media (max-width: 1024px) {
+    #mainnav ul ul {
+        position: absolute;
+        width: 120px;
+        text-transform: none;
+    }
+}
+
 #mainnav ul ul ul {
     left: 180px;
     top: 0;
@@ -1067,25 +1075,16 @@ nav ol {
 }
 
 @media (min-width: 768px) {
-    .nav-items {
-        position: relative;
-        right: 0;
-        display: block;
-        float: right;
-    }
-
     .ham {
         display: none;
     }
 }
 
-@media (max-width: 1048px) {
-    .nav-items {
-        position: relative;
-        right: 3.5%;
-        display: block;
-        float: right;
-    }
+.nav-items {
+    position: relative;
+    right: 0;
+    display: block;
+    float: right;
 }
 
 @media (max-width: 768px) {
