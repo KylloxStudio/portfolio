@@ -969,14 +969,9 @@ nav ol {
 @media (max-width: 1024px) {
     #mainnav ul ul {
         position: absolute;
-        width: 120px;
+        width: 130px;
         text-transform: none;
     }
-}
-
-#mainnav ul ul ul {
-    left: 180px;
-    top: 0;
 }
 
 #mainnav .active:before {
