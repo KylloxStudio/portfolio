@@ -173,15 +173,15 @@ export default function Index() {
     const typing = async () => {
       let text = "";
       if (select(".intro-info .lead")) {
-        contents = ["student", "kyllox"];
+        contents = ["kyllox", "student", "developer"];
         text = select("#job");
         content = contents[i].split("");
         while (content.length) {
           if (!select(".intro-info .lead")) break;
-          await wait(200);
+          await wait(150);
           text.innerHTML += content.shift();
         }
-        await wait(1500);
+        await wait(3500);
         remove();
       }
     }
@@ -305,7 +305,7 @@ export default function Index() {
             <h5>About</h5>
             <h1>HI, there! 👋</h1>
             <div className="intro-info">
-              <p className="lead">I am a <span id="job"></span> who dreams of becoming a developer.<br />I'm still lacking a lot, but I'm trying hard and growing!</p>
+              <p className="lead">I am a <span id="job"></span> who dreams and pursues the future.<br />I'm still lacking a lot, but I'm trying hard and growing!</p>
             </div>
           </div>
         </div>
