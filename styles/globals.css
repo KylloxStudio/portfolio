@@ -1229,13 +1229,9 @@ textarea:focus,
 }
 
 #header .logo {
-    position: absolute;
-    top: 50%;
-    left: 7.5%;
-    transform: translate(0, -50%);
     margin: 0;
     padding: 0;
-    line-height: 0.75;
+    line-height: 0.65;
     float: left;
 }
 
@@ -1344,12 +1340,8 @@ p.lead {
     }
 
     .skills {
-        padding-top: 0.5rem;
+        padding-top: 1.5rem;
     }
-}
-
-.skills {
-    padding-top: 1.5rem;
 }
 
 .about-content .info-list {
