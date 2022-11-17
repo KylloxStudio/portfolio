@@ -199,7 +199,7 @@ body::after{
 .slide-menu-container {
     display: none;
     position: absolute;
-    top: 60px;
+    top: 70px;
     left: 50%;
     transform: translate(-50%, 0);
     width: 85%;
