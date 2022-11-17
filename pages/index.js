@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Img from "next/image";
 import Layout from '../components/layout';
 import Masonry from 'react-masonry-css';
+import { wait, select, show, fadeIn, fadeOut, disableScroll, enableScroll } from '../components/functions';
 import Modal from '../components/modal';
 import { useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -12,27 +13,6 @@ import { movePageScroll } from '../components/navigation';
 
 export default function Index() {
   useEffect(() => {
-    function wait(ms) {
-      return new Promise(res => setTimeout(res, ms));
-    }
-
-    const select = (el, all = false) => {
-      el = el.trim().replace('/', '');
-      if (all) {
-        return [...document.querySelectorAll(el)];
-      } else {
-        return document.querySelector(el);
-      }
-    };
-
-    const page = document.querySelector('html');
-    const disableScroll = () => {
-      page.style.overflow = 'hidden';
-    };
-    const enableScroll = () => {
-      page.style.removeProperty('overflow');
-    };
-
     let overlay;
     let modal;
     let projectlinks = select('.projects-item a', true);
@@ -202,50 +182,6 @@ export default function Index() {
         else
           i = 0;
         typing();
-      }
-    };
-
-    let pagescrolls = select('a.page-scroll', true);
-    pagescrolls.forEach((pagescroll) => {
-      pagescroll.addEventListener('click', (event) => {
-        window.scrollTo({
-          left: 0,
-          top: select(pagescroll.getAttribute('href')).offsetTop,
-          behavior: "smooth"
-        });
-        event.preventDefault();
-      });
-    });
-
-    const show = (el) => {
-      el.style.display = 'block';
-    };
-
-    const hide = (el) => {
-      el.style.display = 'none';
-    };
-
-    const fadeIn = (el, up = true) => {
-      show(el);
-      if (up) {
-        el.style.opacity = "1";
-        el.style.transform = "translateY(0)";
-      } else {
-        el.style.transform = "translateY(0)";
-        el.style.opacity = "1";
-      }
-    };
-
-    const fadeOut = async (el, down) => {
-      if (el) {
-        if (down) {
-          el.style.opacity = "0";
-          el.style.transform = "translateY(25px)";
-        } else {
-          el.style.opacity = "0";
-        }
-        await wait(2000);
-        hide(el);
       }
     };
 
