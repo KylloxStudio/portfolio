@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import { useEffect } from "react";
 import { useRouter } from 'next/router';
-import { select, show, toggle, toggleClass, slideDown, slideUp, slideToggle } from './functions';
+import { select, show, toggle, toggleClass, slideDown, slideUp, slideToggle, scrollToY, getAbsPosY, onscroll } from './functions';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSortDown, faAngleRight, faAngleDown, faAngleUp } from '@fortawesome/free-solid-svg-icons';
 export let movePageScroll = {
