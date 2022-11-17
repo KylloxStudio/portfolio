@@ -2,6 +2,7 @@ import React, { useRef, useEffect } from 'react';
 import emailjs from '@emailjs/browser';
 import ReCAPTCHA from 'react-google-recaptcha';
 import Layout from '../components/layout';
+import { select, fadeIn, fadeOut } from '../components/functions';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMugHot } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faYoutube, faTwitter } from '@fortawesome/free-brands-svg-icons';
@@ -11,41 +12,6 @@ export default function Contact() {
   useEffect(() => {
     document.querySelector('html').style.background = '#151515';
   }, []);
-  function wait(ms) {
-    return new Promise(res => setTimeout(res, ms));
-  }
-
-  const show = (el) => {
-    el.style.display = 'block';
-  };
-
-  const hide = (el) => {
-    el.style.display = 'none';
-  };
-
-  const fadeIn = (el) => {
-    show(el);
-    if (el) {
-      el.style.opacity = "1";
-    }
-  };
-
-  const fadeOut = async (el) => {
-    if (el) {
-      el.style.opacity = "0";
-      await wait(2000);
-      hide(el);
-    }
-  };
-
-  const select = (el, all = false) => {
-    el = el.trim().replace('/', '');
-    if (all) {
-      return [...document.querySelectorAll(el)];
-    } else {
-      return document.querySelector(el);
-    }
-  };
 
   const sendEmail = (e) => {
     e.preventDefault();
