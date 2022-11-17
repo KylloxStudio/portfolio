@@ -207,7 +207,7 @@ body::after{
     margin: 0 auto;
     background-color: rgba(0, 0, 0, 0.85);
     overflow: hidden !important;
-        transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
 
 @media (max-width: 578px) {
