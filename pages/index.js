@@ -241,7 +241,7 @@ export default function Index() {
             <h5>About</h5>
             <h1>HI, there! 👋</h1>
             <div className="intro-info">
-              <p className="lead">I am a <span id="job"></span> who dreams and pursues the future.<br />I'm still lacking a lot, but I'm trying hard and growing!</p>
+              <p className="lead">I am a <span id="job"></span> who dreams and pursues the future.<br />I'm trying hard and growing!</p>
             </div>
           </div>
         </div>
