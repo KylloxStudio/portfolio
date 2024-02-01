@@ -1,0 +1,22 @@
+{
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@emailjs/browser": "^3.11.0",
+    "@fortawesome/fontawesome-svg-core": "^6.4.2",
+    "@fortawesome/free-brands-svg-icons": "^6.4.2",
+    "@fortawesome/free-solid-svg-icons": "^6.4.2",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "framer-motion": "^6.5.1",
+    "next": "latest",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-google-recaptcha": "^2.1.0",
+    "react-masonry-css": "^1.0.16",
+    "typewriter-effect": "^2.21.0"
+  }
+}
