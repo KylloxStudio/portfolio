@@ -254,73 +254,61 @@ export default function Index() {
           <div className="col-twelve">
             <Masonry breakpointCols={2} className="projects-wrapper" columnClassName="projects-item-wrap">
               <div className="projects-item">
-                <Img src="/images/durango-studio.jpg" width={1440} height={755} onLoadingComplete={() => document.querySelector('.projects-item .loading').remove()} alt="DurangoStudio" />
+                <Img src="/images/web/db.jpg" width={1440} height={758} onLoadingComplete={() => document.querySelectorAll('.projects-item .loading')[0].remove()} alt="Database" />
                 <div className="loading" />
-                <a href="#durango-studio" className="overlay">
+                <a href="#kyllox-db" className="overlay">
                   <div className="projects-item-table">
                     <div className="projects-item-cell">
-                      <h3 className="projects-title">Durango Studio</h3>
-                      <span className="projects-types">Web Front-End</span>
+                      <h3 className="projects-title">Database</h3>
+                      <span className="projects-types">Web Development</span>
                     </div>
                   </div>
                 </a>
               </div>
               <div className="projects-item">
-                <Img src="/images/durango-airballoon.png" width={1440} height={837} onLoadingComplete={() => document.querySelector('.projects-item .loading').remove()} alt="DurangoAirballoon" />
+                <Img src="/images/shittim/main.jpg" width={1440} height={900} onLoadingComplete={() => document.querySelectorAll('.projects-item .loading')[1].remove()} alt="Shittim" />
                 <div className="loading" />
-                <a href="#durango-v2" className="overlay">
+                <a href="#shittim" className="overlay">
                   <div className="projects-item-table">
                     <div className="projects-item-cell">
-                      <h3 className="projects-title">DurangoV2</h3>
-                      <span className="projects-types">Unity C#</span>
+                      <h3 className="projects-title">Shittim</h3>
+                      <span className="projects-types">Unity 3D</span>
                     </div>
                   </div>
                 </a>
               </div>
               <div className="projects-item">
-                <Img src="/images/durango-pet.png" width={1440} height={755} onLoadingComplete={() => document.querySelector('.projects-item .loading').remove()} alt="DurangoPet" />
-                <div className="loading" />
-                <a href="#durango-v2" className="overlay">
-                  <div className="projects-item-table">
-                    <div className="projects-item-cell">
-                      <h3 className="projects-title">Durango_V2</h3>
-                      <span className="projects-types">Unity C#</span>
-                    </div>
-                  </div>
-                </a>
-              </div>
-              <div className="projects-item">
-                <Img src="/images/durango-combat.png" width={1440} height={838} onLoadingComplete={() => document.querySelector('.projects-item .loading').remove()} alt="DurangoCombat" />
+                <Img src="/images/durango/pet.png" width={1440} height={755} onLoadingComplete={() => document.querySelector('.projects-item .loading').remove()} alt="DurangoPet" />
                 <div className="loading" />
                 <a href="#durango-v2" className="overlay">
                   <div className="projects-item-table">
                     <div className="projects-item-cell">
                       <h3 className="projects-title">Durango_V2</h3>
-                      <span className="projects-types">Unity C#</span>
+                      <span className="projects-types">Unity 3D</span>
                     </div>
                   </div>
                 </a>
               </div>
               <div className="projects-item">
-                <Img src="/images/what-studio.png" width={1440} height={960} onLoadingComplete={() => document.querySelector('.projects-item .loading').remove()} alt="WhatStudio" />
-                <div className="loading" />
-                <a href="#what-studio" className="overlay">
-                  <div className="projects-item-table">
-                    <div className="projects-item-cell">
-                      <h3 className="projects-title">What Studio</h3>
-                      <span className="projects-types">Web Front-End</span>
-                    </div>
-                  </div>
-                </a>
-              </div>
-              <div className="projects-item">
-                <Img src="/images/durango-sailing.jpg" width={1440} height={838} onLoadingComplete={() => document.querySelector('.projects-item .loading').remove()} alt="DurangoSailing" />
+                <Img src="/images/durango/combat.png" width={1440} height={838} onLoadingComplete={() => document.querySelector('.projects-item .loading').remove()} alt="DurangoCombat" />
                 <div className="loading" />
                 <a href="#durango-v2" className="overlay">
                   <div className="projects-item-table">
                     <div className="projects-item-cell">
                       <h3 className="projects-title">Durango_V2</h3>
-                      <span className="projects-types">Unity C#</span>
+                      <span className="projects-types">Unity 3D</span>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div className="projects-item">
+                <Img src="/images/unknown_player/main.png" width={1440} height={838} onLoadingComplete={() => document.querySelector('.projects-item .loading').remove()} alt="WhatStudio" />
+                <div className="loading" />
+                <a href="#unknown-player" className="overlay">
+                  <div className="projects-item-table">
+                    <div className="projects-item-cell">
+                      <h3 className="projects-title">Unknown Player</h3>
+                      <span className="projects-types">Unity 2D</span>
                     </div>
                   </div>
                 </a>
@@ -329,27 +317,48 @@ export default function Index() {
           </div>
         </div>
       </section>
-      <div id="durango-studio">
+
+
+      <div id="kyllox-db">
         <Modal>
           <div className="media">
-            <Img src="/images/durango-main.png" width={2160} height={1130} onLoadingComplete={() => document.querySelector('#durango-studio .loading').remove()} alt="DurangoStudio" />
+            <Img src="/images/web/db.jpg" width={1440} height={758} onLoadingComplete={() => document.querySelector('#kyllox-db .loading').remove()} alt="Database" />
             <div className="loading" />
           </div>
           <div className="description-box">
-            <h4>Durango Studio</h4>
-            <p>Kyllox's Durango Studio. I upload the news of Durango development this website.</p>
+            <h4>Database</h4>
+            <p>A website that collects all my works.</p>
             <div className="categories">Web Development</div>
           </div>
           <div className="link-box">
-            <a href="https://durango.kyllox.pe.kr" target="_blank" className="modal-visit">Visit WebSite</a>
+            <a href="http://db.kyllox.pe.kr" target="_blank" className="modal-visit">Visit WebSite</a>
             <a className="modal-dismiss">Close</a>
           </div>
         </Modal>
       </div>
+
+      <div id="shittim">
+        <Modal>
+          <div className="media">
+            <Img src="/images/shittim/mika.gif" width={1440} height={900} onLoadingComplete={() => document.querySelector('#shittim .loading').remove()} alt="Database" />
+            <div className="loading" />
+          </div>
+          <div className="description-box">
+            <h4>Shittim</h4>
+            <p>BlueArchive TPS Multiplay Game. (Fanmade)</p>
+            <div className="categories">Game Development</div>
+          </div>
+          <div className="link-box">
+            <a href="http://db.kyllox.pe.kr/shittim/" target="_blank" className="modal-visit">Play Now</a>
+            <a className="modal-dismiss">Close</a>
+          </div>
+        </Modal>
+      </div>
+
       <div id="durango-v2">
         <Modal>
           <div className="media">
-            <Img src="/images/durango-project.jpg" width={1439} height={750} onLoadingComplete={() => document.querySelector('#durango-v2 .loading').remove()} alt="DurangoV2" />
+            <Img src="/images/durango/project.jpg" width={1439} height={750} onLoadingComplete={() => document.querySelector('#durango-v2 .loading').remove()} alt="DurangoV2" />
             <div className="loading" />
           </div>
           <div className="description-box">
@@ -358,24 +367,25 @@ export default function Index() {
             <div className="categories">Game Development</div>
           </div>
           <div className="link-box">
-            <a href="https://github.com/KylloxStudio/Durango_V2" target="_blank" className="modal-visit">Visit WebSite</a>
+            <a href="https://github.com/KylloxStudio/Durango_V2" target="_blank" className="modal-visit">Visit Project</a>
             <a className="modal-dismiss">Close</a>
           </div>
         </Modal>
       </div>
-      <div id="what-studio">
+
+      <div id="unknown-player">
         <Modal>
           <div className="media">
-            <Img src="/images/what-studio.png" width={1440} height={960} onLoadingComplete={() => document.querySelector('#what-studio .loading').remove()} alt="WhatStudio" />
+            <Img src="/images/unknown_player/battle.jpg" width={1440} height={900} onLoadingComplete={() => document.querySelector('#unknown-player .loading').remove()} alt="Unknown Player" />
             <div className="loading" />
           </div>
           <div className="description-box">
-            <h4>What! Studio</h4>
-            <p>This is a website that restored the website of What Studio, which is now disbanded. You can see the NDC of What Studio here.</p>
-            <div className="categories">Web Development</div>
+            <h4>Unknown Player</h4>
+            <p>2D MultiPlay Action Game.</p>
+            <div className="categories">Game Development</div>
           </div>
           <div className="link-box">
-            <a href="http://db.kyllox.pe.kr/archive/what-studio/" target="_blank" className="modal-visit">Visit WebSite</a>
+            <a href="https://github.com/KylloxStudio/UnknownPlayer" target="_blank" className="modal-visit">Visit Project</a>
             <a className="modal-dismiss">Close</a>
           </div>
         </Modal>

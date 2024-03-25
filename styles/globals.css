@@ -136,8 +136,7 @@ body::after {
 --------------------------------------------------------------------------------------------------------------- */
 
 .row {
-  width: 94%;
-  max-width: 1140px;
+  width: 78%;
   margin: 0 auto;
 }
 
@@ -339,7 +338,6 @@ body::after {
   font-family: "Poppins Medium", sans-serif;
   font-size: 5.75rem;
   line-height: 1.05;
-  max-width: 900px;
   margin: 0 auto;
   text-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
   transition: all 0.2s ease-in-out;
@@ -603,7 +601,7 @@ button.stroke,
 
 .form-field {
   position: relative;
-  max-width: 740px;
+  max-width: 75%;
   margin: 0 auto;
 }
 
@@ -1269,7 +1267,7 @@ textarea:focus,
 }
 
 .section-intro {
-  max-width: 700px;
+  max-width: 60% !important;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
@@ -1287,7 +1285,6 @@ textarea:focus,
 @media (max-width: 768px) {
   .lead {
     font-size: 16px;
-    text-align: center !important;
   }
 }
 
@@ -1298,6 +1295,10 @@ textarea:focus,
 
 #about .section-intro {
   margin-bottom: 3rem;
+}
+
+#about .row {
+  max-width: 75%;
 }
 
 .section-intro h1 {
@@ -1334,7 +1335,6 @@ textarea:focus,
 .about-content {
   position: relative;
   text-align: left;
-  max-width: 850px;
   margin-bottom: 3.6rem;
 }
 
@@ -1836,7 +1836,7 @@ textarea:focus,
 
 .modal {
   display: inline-block;
-  max-width: 550px;
+  max-width: 50%;
   position: relative;
   background: #ffffff;
 }
