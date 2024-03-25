@@ -176,7 +176,6 @@ export default function Navigation() {
             <li><a className="nav-link drop"><FontAwesomeIcon icon={faSortDown} />Pages</a>
               <ul className="drop-menu">
                 <li><a href="https://blog.kyllox.pe.kr">Blog</a></li>
-                <li><a href="https://durango.kyllox.pe.kr">Durango Studio</a></li>
                 <li><a href="http://db.kyllox.pe.kr">Database</a></li>
               </ul>
             </li>
@@ -219,7 +218,6 @@ export default function Navigation() {
               </div>
               <ul id="slide-menu-pages" className="slide-menu-sub">
                 <li className="slide-item-sub"><a className="slide-link-sub" href="https://blog.kyllox.pe.kr">└ Blog</a></li>
-                <li className="slide-item-sub"><a className="slide-link-sub" href="https://durango.kyllox.pe.kr">└ Durango Studio</a></li>
                 <li className="slide-item-sub"><a className="slide-link-sub" href="http://db.kyllox.pe.kr">└ Database</a></li>
               </ul>
             </li>
