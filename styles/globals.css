@@ -520,7 +520,7 @@ button.stroke,
 }
 
 @media (max-width: 578px) {
-  .intro-content h5 {
+  .intro-content h5 .Typewriter {
     font-size: 1.25rem;
   }
 
