@@ -513,6 +513,12 @@ button.stroke,
   transition: all 0.2s ease-in-out;
 }
 
+@media (max-width: 768px) {
+  .intro-content h2 .Typewriter {
+    font-size: 2.5rem;
+  }
+}
+
 @media (max-width: 578px) {
   .intro-content h5 {
     font-size: 1.25rem;
@@ -522,8 +528,8 @@ button.stroke,
     font-size: 3.25rem;
   }
 
-  .intro-content h2 {
-    font-size: 2.25rem;
+  .intro-content h2 .Typewriter {
+    font-size: 1.95rem;
   }
 
   .intro-content #intro-position {
