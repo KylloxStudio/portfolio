@@ -1232,21 +1232,21 @@ textarea:focus,
 }
 
 #header.header-scrolled {
-  padding: 18.5px 0;
+  padding: 20px 0;
   transition: all 0.25s ease-in-out;
   background: rgba(0, 0, 0, 0.85);
 }
 
 @media (max-width: 768px) {
   #header {
-    padding: 25px 0;
+    padding: 23.5px 0;
     background: rgba(0, 0, 0, 0.85);
     z-index: 997;
     transition: all 0.2s ease-in-out;
   }
 
   #header.header-scrolled {
-    padding: 20px 0;
+    padding: 18.5px 0;
     transition: all 0.25s ease-in-out;
   }
 }
