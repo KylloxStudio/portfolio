@@ -104,7 +104,7 @@ body::after {
   content: url('/images/intro-background.jpg');
 }
 
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
   height: 5px;
 }
 
@@ -115,7 +115,7 @@ body::after {
 ::-webkit-scrollbar-thumb {
   background: rgba(0, 0, 0, 0.5);
   border-radius: 2px;
-}
+} */
 
 .loading {
   width: 42px;
