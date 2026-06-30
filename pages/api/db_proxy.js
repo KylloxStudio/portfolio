@@ -1,6 +1,6 @@
 export default async function handler(req, res) {
   try {
-    const upstream = await fetch("http://db.kyllox.pe.kr/index.php");
+    const upstream = await fetch("https://kyllox3509.dothome.co.kr/index.php");
 
     if (!upstream.ok) {
       res.status(upstream.status).json({ error: "upstream error" });
