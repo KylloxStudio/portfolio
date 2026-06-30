@@ -1,6 +1,6 @@
 export default async function handler(req, res) {
   try {
-    const upstream = await fetch("https://kyllox3509.dothome.co.kr/index.php");
+    const upstream = await fetch("https://kyllox3509.dothome.co.kr/db/index.php");
 
     if (!upstream.ok) {
       res.status(upstream.status).json({ error: "upstream error" });
@@ -11,7 +11,7 @@ export default async function handler(req, res) {
 
     html = html.replace(
       /<head>/i,
-      `<head><base href="https://kyllox3509.dothome.co.kr/">`
+      `<head><base href="https://kyllox3509.dothome.co.kr/db/">`
     );
 
     res.setHeader("Content-Type", "text/html; charset=utf-8");
