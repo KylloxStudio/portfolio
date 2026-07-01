@@ -218,7 +218,7 @@ export default function Navigation() {
               </div>
               <ul id="slide-menu-pages" className="slide-menu-sub">
                 <li className="slide-item-sub"><a className="slide-link-sub" href="https://blog.kyllox.pe.kr">└ Blog</a></li>
-                <li className="slide-item-sub"><a className="slide-link-sub" href="/api/db_proxy">└ Database</a></li>
+                <li className="slide-item-sub"><a className="slide-link-sub" href="https://kyllox.pe.kr/db/">└ Database</a></li>
               </ul>
             </li>
           </ul>
