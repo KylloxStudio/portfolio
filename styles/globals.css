@@ -104,18 +104,21 @@ body::after {
   content: url('/images/intro-background.jpg');
 }
 
-/* ::-webkit-scrollbar {
-  height: 5px;
+::-webkit-scrollbar {
+  width: 12px;
 }
 
 ::-webkit-scrollbar-track {
-  background: transparent;
+  background: rgba(0, 0, 0, 0.5);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 0, 0.5);
-  border-radius: 2px;
-} */
+  background: rgba(255, 255, 255, 0.5);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.6);
+}
 
 .loading {
   width: 42px;
