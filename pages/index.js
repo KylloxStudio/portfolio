@@ -331,7 +331,7 @@ export default function Index() {
             <div className="categories">Web Development</div>
           </div>
           <div className="link-box">
-            <a href="http://db.kyllox.pe.kr" target="_blank" className="modal-visit">Visit WebSite</a>
+            <a href="https://kyllox.pe.kr/db/" target="_blank" className="modal-visit">Visit WebSite</a>
             <a className="modal-dismiss">Close</a>
           </div>
         </Modal>
@@ -349,7 +349,7 @@ export default function Index() {
             <div className="categories">Game Development</div>
           </div>
           <div className="link-box">
-            <a href="http://db.kyllox.pe.kr/shittim/" target="_blank" className="modal-visit">Play Now</a>
+            <a href="https://kyllox.pe.kr/shittim/" target="_blank" className="modal-visit">Play Now</a>
             <a className="modal-dismiss">Close</a>
           </div>
         </Modal>

@@ -176,7 +176,7 @@ export default function Navigation() {
             <li><a className="nav-link drop"><FontAwesomeIcon icon={faSortDown} />Pages</a>
               <ul className="drop-menu">
                 <li><a href="https://blog.kyllox.pe.kr">Blog</a></li>
-                <li><a href="/api/db_proxy">Database</a></li>
+                <li><a href="https://kyllox.pe.kr/db/">Database</a></li>
               </ul>
             </li>
           </ul>
