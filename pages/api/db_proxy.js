@@ -11,7 +11,7 @@ export default async function handler(req, res) {
 
     html = html.replace(
       /<head>/i,
-      `<head><base href="https://kyllox.pe.kr/db">`
+      `<head><base href="https://kyllox.pe.kr/db/">`
     );
 
     res.setHeader("Content-Type", "text/html; charset=utf-8");
